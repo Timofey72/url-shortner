@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Сокращатель ссылок</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <div class="header__nav-title">
+                <a href="#">Сокращатель ссылок</a>
+            </div>
+
+            <div class="header__nav_links">
+                <a class="nav-link" href="{% url 'home' %}">Главная</a>
+                <a class="nav-link" href="{% url 'about' %}">Про нас</a>
+
+                <a class="nav-link" href="{% url 'profile' %}">Личный кабинет</a>
+                <a class="nav-link" href="{% url 'link' %}">Ссылки</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="main-page">
+            <div class="title_block">
+                <h1 class="page_title">Сокра.тим</h1>
+                <h2 class="page_description">Быстро сократим любую длинную ссылку для вашего проекта!</h2>
+                <a href="#">
+                    <button class="form__button">Кабинет пользователя</button>
+                </a>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+{% extends 'short/base.html' %}
+{% block content %}
+    <h1 class="page_title">Создание ссылок</h1>
+
+    <div>
+        <form class="form" method="POST">
+            {% csrf_token %}
+            <label>
+                <div class="form__label">Длинная ссылка:</div>
+                <input class="form__input" name="long_link" type="url" placeholder="Длинная ссылка" required>
+            </label>
+            <label>
+                <div class="form__label">Сокращенная ссылка:</div>
+                <input class="form__input" name="short_link" type="text" placeholder="Сокращенная ссылка"
+                       required>
+            </label>
+
+            {% if error %}
+                <p class="form__error">Такая ссылка уже существует!</p>
+            {% endif %}
+            <button class="form__button" type="submit">Создать ссылку</button>
+        </form>
+    </div>
+
+    <h2 class="page_title" style="margin-top: 30px; font-size: 35px;">Доступные ссылки</h2>
+    <div class="links_list">
+        {% for link in links %}
+            <p class="created_link">Ссылка - <a href="{% url 'open_link' link.short_link %}">/link/{{ link.short_link }}/</a>
+            </p>
+        {% endfor %}
+    </div>
+
+{% endblock %}

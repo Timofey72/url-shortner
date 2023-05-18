@@ -1,0 +1,153 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    font-family: Arial, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+.header {
+    background-color: #fff;
+    padding: 40px 0;
+}
+
+.header__nav {
+    margin-right: 50px;
+
+}
+
+.header__nav_links {
+    float: right
+}
+
+.nav-link {
+    margin: 10px;
+    text-decoration: none;
+    color: black;
+}
+
+.header__nav-title {
+    display: inline-block;
+    margin-left: 30px;
+}
+
+.header__nav-title a {
+    text-decoration: none;
+    color: black;
+    user-select: none;
+    font-size: 20px;
+}
+
+.page_title {
+    font-size: 50px;
+    text-align: center;
+}
+
+.page_description {
+    margin-top: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.page_description a {
+    text-decoration: none;
+    color: rgb(252, 139, 47)
+}
+
+.form {
+    width: 500px;
+    margin: 50px auto 0 auto;
+}
+
+.form__label {
+    font-size: 20px;
+}
+
+.form__input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    border: 2px solid rgb(182, 182, 182);
+    border-radius: 10px;
+}
+
+.form__error {
+    margin-top: 10px;
+    color: red;
+    font-size: 16px;
+}
+
+.form__button {
+    background-color: rgb(252, 139, 47);
+    color: white;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 10px 40px;
+    border-radius: 7px
+}
+
+.form__link {
+    margin-top: 30px;
+    font-size: 15px;
+}
+
+.form__link a {
+    text-decoration: none;
+}
+
+.user-data {
+    text-align: center;
+}
+
+.message {
+    color: green;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.user__username {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.user__email {
+    margin: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.links_list {
+    width: 500px;
+    margin: 50px auto 0 auto;
+}
+
+.created_link {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.created_link a {
+    color:rgb(252, 139, 47);
+    text-decoration: none;
+}
+
+.title_block {
+    margin: 50px auto 0 auto;
+    text-align: center;
+}
+
+.title_block .page_title {
+    font-size: 70px;
+}
+
+.title_block .page_description {
+    font-size: 20px;
+    color: black;
+    margin: 20px 0 40px 0;
+}

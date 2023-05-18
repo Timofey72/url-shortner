@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Сокращатель ссылок</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <div class="header__nav-title">
+                <a href="#">Сокращатель ссылок</a>
+            </div>
+
+            <div class="header__nav_links">
+                <a class="nav-link" href="{% url 'home' %}">Главная</a>
+                <a class="nav-link" href="{% url 'about' %}">Про нас</a>
+
+                <a class="nav-link" href="{% url 'profile' %}">Личный кабинет</a>
+                <a class="nav-link" href="{% url 'link' %}">Ссылки</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="main-page">
+            <h1 class="page_title">Создание ссылок</h1>
+
+            <div>
+                <form class="form" method="POST">
+                    <label>
+                        <div class="form__label">Длинная ссылка:</div>
+                        <input class="form__input" name="long_link" type="url" placeholder="Длинная ссылка" required>
+                    </label>
+                    <label>
+                        <div class="form__label">Сокращенная ссылка:</div>
+                        <input class="form__input" name="short_link" type="text" placeholder="Сокращенная ссылка"
+                            required>
+                    </label>
+
+                    <p class="form__error">Такая ссылка уже существует!</p>
+                    <button class="form__button" type="submit">Создать ссылку</button>
+                </form>
+            </div>
+
+            <h2 class="page_title" style="margin-top: 30px; font-size: 35px;">Доступные ссылки</h2>
+            <div class="links_list">
+                <p class="created_link">Ссылка - <a href="{% url 'open_link' link.short_link %}">/link/dg/</a></p>
+                <p class="created_link">Ссылка - <a href="{% url 'open_link' link.short_link %}">/link/top/</a></p>
+                <p class="created_link">Ссылка - <a href="{% url 'open_link' link.short_link %}">/link/hey/</a></p>
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

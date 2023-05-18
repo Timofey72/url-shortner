@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Сокращатель ссылок</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <div class="header__nav-title">
+                <a href="#">Сокращатель ссылок</a>
+            </div>
+
+            <div class="header__nav_links">
+                <a class="nav-link" href="{% url 'home' %}">Главная</a>
+                <a class="nav-link" href="{% url 'about' %}">Про нас</a>
+
+                <a class="nav-link" href="{% url 'profile' %}">Личный кабинет</a>
+                <a class="nav-link" href="{% url 'link' %}">Ссылки</a>
+
+                <!-- <a class="header__nav-link" href="{% url 'login' %}">Войти</a>
+                <a class="header__nav-link" href="{% url 'signup' %}">Регистрация</a> -->
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="main-page">
+            <h1 class="page_title">Login</h1>
+
+            <div class="form_login">
+                <form class="form">
+                    <label>
+                        <div class="form__label">Имя пользователя:</div>
+                        <input class="form__input" name="username" placeholder="Имя пользователя" type="text" required>
+                    </label>
+                    <label>
+                        <div class="form__label">Пароль:</div>
+                        <input class="form__input" name="password" placeholder="Пароль" type="password" required>
+                    </label>
+
+                    <p class="form__error">&bull; Такого пользователя нет</p>
+
+                    <button class="form__button" type="submit">Вход</button>
+
+                    <p class="form__link">
+                        Нет аккаунта? <a href="{% url 'signup' %}">Регистрация</a>
+                    </p>
+                </form>
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Сокращатель ссылок</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <div class="header__nav-title">
+                <a href="#">Сокращатель ссылок</a>
+            </div>
+
+            <div class="header__nav_links">
+                <a class="nav-link" href="{% url 'home' %}">Главная</a>
+                <a class="nav-link" href="{% url 'about' %}">Про нас</a>
+
+                <a class="nav-link" href="{% url 'profile' %}">Личный кабинет</a>
+                <a class="nav-link" href="{% url 'link' %}">Ссылки</a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="main-page">
+
+
+            <h2 class="page_title" style="font-size: 35px;">Кабинет пользователя</h2>
+
+            <div class="user-data">
+
+                <p class="user__username">@timofey</p>
+                <p class="user__email">Email: tima.rus-2007@mail.ru</p>
+
+                <form method="POST" action="{% url 'logout' %}">
+                    <button class="form__button" type="submit">Выйти из кабинета</button>
+                </form>
+            </div>
+
+
+            <div>
+                
+                <form class="form" method="POST">
+                    <h2 class="page_title" style="font-size: 30px; margin-bottom: 20px;">Изменить данные про пользователя</h2>
+                    <div class="message">
+                        <p>Данные успешно обновлены!</p>
+                    </div>
+                    <label>
+                        <div class="form__label">Имя пользователя:</div>
+                        <input class="form__input" name="username" value="timofey" type="text" required>
+                    </label>
+                    <label>
+                        <div class="form__label">Email:</div>
+                        <input class="form__input" name="email" value="tima.rus-2007@mail.ru" type="email" required>
+                    </label>
+
+                    <p class="form__error">Такое имя уже занято</p>
+
+                    <button class="form__button" type="submit">Обновить данные</button>
+                </form>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+</html>

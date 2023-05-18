@@ -1,0 +1,42 @@
+{% extends 'short/base.html' %}
+{% block content %}
+    <h2 class="page_title" style="font-size: 35px;">Кабинет пользователя</h2>
+
+    <div class="user-data">
+        <p class="user__username">@{{ user.username }}</p>
+        <p class="user__email">Email: {{ user.email }}</p>
+
+        <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button class="form__button" type="submit">Выйти из кабинета</button>
+        </form>
+    </div>
+
+
+    <div>
+        <form class="form" method="POST">
+            {% csrf_token %}
+            <h2 class="page_title" style="font-size: 30px; margin-bottom: 20px;">Изменить данные про пользователя</h2>
+            {% if message %}
+                <div class="message">
+                    <p>{{ message }}</p>
+                </div>
+            {% endif %}
+
+            <label>
+                <div class="form__label">Имя пользователя:</div>
+                <input class="form__input" name="username" value="{{ user.username }}" type="text" required>
+            </label>
+            <label>
+                <div class="form__label">Email:</div>
+                <input class="form__input" name="email" value="{{ user.email }}" type="email" required>
+            </label>
+
+            {% if error %}
+                <p class="form__error">{{ error }}</p>
+            {% endif %}
+
+            <button class="form__button" type="submit">Обновить данные</button>
+        </form>
+    </div>
+{% endblock %}

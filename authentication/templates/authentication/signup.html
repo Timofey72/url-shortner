@@ -1,0 +1,29 @@
+{% extends "short/base.html" %}
+{% block content %}
+    <h1 class="page_title">Регистрация на сайте</h1>
+
+    <div class="form_login">
+        <form method="POST" class="form">
+            {% csrf_token %}
+            <label>
+                <div class="form__label">Имя пользователя:</div>
+                <input class="form__input" placeholder="Имя пользователя" name="username" type="text" required>
+            </label>
+            <label>
+                <div class="form__label">Email:</div>
+                <input class="form__input" placeholder="Email" name="email" type="email" required>
+            </label>
+            <label>
+                <div class="form__label">Пароль:</div>
+                <input class="form__input" placeholder="Пароль" name="password" type="password" required>
+            </label>
+
+            {% if error %}
+                <p class="form__error">&bull; {{ error }}</p>
+            {% endif %}
+            <button class="form__button" type="submit">Вход</button>
+            <p class="form__link">Уже есть аккаунт? <a href="{% url 'login' %}">Вход</a></p>
+        </form>
+    </div>
+
+{% endblock %}
